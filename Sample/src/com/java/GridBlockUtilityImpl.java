@@ -91,9 +91,9 @@ public class GridBlockUtilityImpl implements GridBlockUtility {
 		while (currentXCord < array.length - 1 && currentYCord < array.length - 1) {
 			if (traverseAdjacentElements(array, center, item.getDirection(), currentXCord, currentYCord, visited, model,
 					adjacentDistance)) {
-				item.setTimeTakenInMinutes(model.getDistanceCovered());
+				item.setTimeTakenInMinutes(model.getDistanceCovered()  * 2);
 				LocalTime localTime = item.getOrderTime();
-				LocalTime deliveredTime = localTime.plusMinutes(model.getDistanceCovered());
+				LocalTime deliveredTime = localTime.plusMinutes(model.getDistanceCovered() * 2);
 				item.setDeliveredTime(deliveredTime);
 			} else {
 				currentXCord += 1;
@@ -120,9 +120,9 @@ public class GridBlockUtilityImpl implements GridBlockUtility {
 		while (currentXCord > 0 && currentYCord > 0) {
 			if (traverseAdjacentElements(array, center, item.getDirection(), currentXCord, currentYCord, visited, model,
 					adjacentDistance)) {
-				item.setTimeTakenInMinutes(model.getDistanceCovered());
+				item.setTimeTakenInMinutes(model.getDistanceCovered() * 2);
 				LocalTime localTime = item.getOrderTime();
-				LocalTime deliveredTime = localTime.plusMinutes(model.getDistanceCovered());
+				LocalTime deliveredTime = localTime.plusMinutes(model.getDistanceCovered() * 2);
 				item.setDeliveredTime(deliveredTime);
 			} else {
 				currentXCord -= 1;
@@ -149,9 +149,9 @@ public class GridBlockUtilityImpl implements GridBlockUtility {
 		boolean flag = traverseAdjacentElements(array, center, item.getDirection(), currentXCord, currentYCord, visited,
 				model, centerDistance);
 		if (flag) {
-			item.setTimeTakenInMinutes(model.getDistanceCovered());
+			item.setTimeTakenInMinutes(model.getDistanceCovered() * 2);
 			LocalTime localTime = item.getOrderTime();
-			LocalTime deliveredTime = localTime.plusMinutes(model.getDistanceCovered());
+			LocalTime deliveredTime = localTime.plusMinutes(model.getDistanceCovered() * 2);
 			item.setDeliveredTime(deliveredTime);
 		}
 		return flag;
