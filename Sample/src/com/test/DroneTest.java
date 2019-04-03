@@ -34,6 +34,6 @@ public class DroneTest {
 		
 		List<Item> orderedItems = util.sortOrdersPerTimeTaken(listItem);
 		int nps = cal.findNpsScore(orderedItems);
-		assertEquals(75, nps);
+		assertEquals(25, nps);
 	}
 }
